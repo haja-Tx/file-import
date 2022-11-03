@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Import file
+{% endblock %}
+
+{% block body %}
+	<div class="d-flex justify-content-center">
+		<div class="col-6">
+			<h2>Importation de fichier</h2>
+			{% for notice in app.flashes('success') %}
+				<div class="alert alert-success alert-dismissible fade show m-2" role="alert">
+					<div class="alert-body">
+						{{notice}}
+					</div>
+					<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+				</div>
+			{% endfor %}
+			{{ form_start(form)}}
+			{{ form_row(form)}}
+			<button class="btn btn-primary">Importer Fichier</button>
+			{{ form_end(form)}}
+		</div>
+	</div>
+{% endblock %}
